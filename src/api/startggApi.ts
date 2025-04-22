@@ -1,0 +1,182 @@
+import { ENDPOINT_URL, ID_TOKEN } from "../constants/constants";
+
+export async function queryGQL(userSlug: string) {
+  const query = `
+    query GetUserBySlug($slug: String!) {
+      user(slug: $slug) {
+        id
+        player {
+          gamerTag
+          recentStandings(limit: 5) {
+            placement
+            entrant {
+              event {
+                numEntrants
+                tournament {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await fetch(ENDPOINT_URL, {
+    method: "POST", // ここが重要
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${ID_TOKEN}`, // ID_TOKENをここで使う
+      "Accept": "application/json",
+    },
+    body: JSON.stringify({
+      query,
+      variables: { slug: userSlug }
+    })
+  });
+
+  const data = await response.json();
+
+  return data;
+}
+
+export async function queryGQL2() {
+    const query = `
+        query PlayerPools(
+          $tournamentSlug: String!,
+          $eventSlug: String!,
+          $gamerTag: String!,
+        ) {
+            tournament(slug: $tournamentSlug) {
+                events(filter: {slug: $eventSlug}) { id slug }
+                participants(query: {filter: {gamerTag: $gamerTag}}) {
+                    nodes{
+                        gamerTag
+                        entrants{
+                            event{id slug }
+                            seeds{
+                                phaseGroup{
+                                    displayIdentifier
+                                    phase{name}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `;
+  
+    const response = await fetch(ENDPOINT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${ID_TOKEN}`,
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        query,
+        variables: { tournamentSlug: "12-kagaribi-12", eventSlug: "singles", gamerTag: "おつ" }
+      })
+    });
+  
+    const data = await response.json();
+  
+    return data;
+  }
+
+  export async function queryGQL3(gamerTags: string[]) {
+    let query = `
+        query GetEventId($tSlug:String!, $eSlug:String!){
+            tournament(slug:$tSlug){ events( filter: {slug:$eSlug} ){ id } }
+        }
+    `;
+    const subResponse = await fetch(ENDPOINT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${ID_TOKEN}`,
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          query,
+          variables: { tSlug: "12-kagaribi-12", eSlug: "singles" }
+        })
+      });
+    const subData = await subResponse.json();
+    console.log(subData);
+    query = `
+        query PlayerPools(
+          $tournamentSlug: String!,
+          $eventId: ID!,
+          $gamerTag: String!,
+        ) {
+            tournament(slug: $tournamentSlug) {
+                participants(query: {
+                    filter: {gamerTag: $gamerTag, eventIds:[$eventId]}
+                }) {
+                    nodes{
+                        gamerTag
+                        entrants{
+                            event{ id }
+                            seeds{
+                                phaseGroup{
+                                    displayIdentifier
+                                    phase{name}
+                                    wave{identifier}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `;
+    const res = [];
+
+    console.log(subData["data"]["tournament"]["events"][0]["id"]);
+    const eventId = subData["data"]["tournament"]["events"][0]["id"];
+    console.log(eventId);
+  
+    for (const gamerTag of gamerTags){
+        const response = await fetch(ENDPOINT_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${ID_TOKEN}`,
+            "Accept": "application/json",
+        },
+        body: JSON.stringify({
+            query,
+            variables: { tournamentSlug: "12-kagaribi-12", eventId: eventId, gamerTag: gamerTag }
+        })
+        });
+    
+        const data = await response.json();
+        // console.log(data);
+        const seeds = data["data"]["tournament"]["participants"]["nodes"][0]["entrants"][0]["seeds"];
+        res.push({pool: seeds[seeds.length-1]["phaseGroup"]["displayIdentifier"], gamerTag: data["data"]["tournament"]["participants"]["nodes"][0]["gamerTag"], });
+    }
+        
+    // 良い感じにsortする処理
+    // 篝火限定なのでどっかに分離した方が良いかも？
+    const sortedRes = res.sort((a, b) => {
+        const [aWave, aPool] = [a.pool[0], parseInt(a.pool.slice(1), 10)];
+        const [bWave, bPool] = [b.pool[0], parseInt(b.pool.slice(1), 10)];
+        if(aWave < bWave) return -1;
+        if(aWave > bWave) return 1;
+
+        return aPool - bPool;
+    });
+
+    const mapRes:Map<string, string[]> = new Map();
+    for(const p of sortedRes){
+        if(!mapRes.has(p.pool)){
+            mapRes.set(p.pool, []);
+        }
+        mapRes.get(p.pool)!.push(p.gamerTag);
+    }
+  
+    return mapRes;
+  }
