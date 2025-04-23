@@ -1,4 +1,6 @@
 import { ENDPOINT_URL, ID_TOKEN } from "../constants/constants";
+import { setPools } from "../features/logic";
+import { poolResponses } from "../types/types";
 
 export async function queryGQL(userSlug: string) {
   const query = `
@@ -133,7 +135,7 @@ export async function queryGQL2() {
             }
         }
     `;
-    const res = [];
+    const res:poolResponses = [];
 
     console.log(subData["data"]["tournament"]["events"][0]["id"]);
     const eventId = subData["data"]["tournament"]["events"][0]["id"];
@@ -158,25 +160,29 @@ export async function queryGQL2() {
         const seeds = data["data"]["tournament"]["participants"]["nodes"][0]["entrants"][0]["seeds"];
         res.push({pool: seeds[seeds.length-1]["phaseGroup"]["displayIdentifier"], gamerTag: data["data"]["tournament"]["participants"]["nodes"][0]["gamerTag"], });
     }
+
+    const logicRes = setPools(res);
+    console.log(logicRes);
         
     // 良い感じにsortする処理
     // 篝火限定なのでどっかに分離した方が良いかも？
-    const sortedRes = res.sort((a, b) => {
-        const [aWave, aPool] = [a.pool[0], parseInt(a.pool.slice(1), 10)];
-        const [bWave, bPool] = [b.pool[0], parseInt(b.pool.slice(1), 10)];
-        if(aWave < bWave) return -1;
-        if(aWave > bWave) return 1;
 
-        return aPool - bPool;
-    });
+    // const sortedRes = res.sort((a, b) => {
+    //     const [aWave, aPool] = [a.pool[0], parseInt(a.pool.slice(1), 10)];
+    //     const [bWave, bPool] = [b.pool[0], parseInt(b.pool.slice(1), 10)];
+    //     if(aWave < bWave) return -1;
+    //     if(aWave > bWave) return 1;
 
-    const mapRes:Map<string, string[]> = new Map();
-    for(const p of sortedRes){
-        if(!mapRes.has(p.pool)){
-            mapRes.set(p.pool, []);
-        }
-        mapRes.get(p.pool)!.push(p.gamerTag);
-    }
+    //     return aPool - bPool;
+    // });
+
+    // const mapRes:Map<string, string[]> = new Map();
+    // for(const p of sortedRes){
+    //     if(!mapRes.has(p.pool)){
+    //         mapRes.set(p.pool, []);
+    //     }
+    //     mapRes.get(p.pool)!.push(p.gamerTag);
+    // }
   
-    return mapRes;
+    return logicRes;
   }

@@ -2,12 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PoolPage from "./pages/PoolPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/playerPools" element={<PoolPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
