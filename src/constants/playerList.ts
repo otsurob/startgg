@@ -1,4 +1,4 @@
-export const players = [
+export const wasesuma = [
     "おつ",
     "リム",
     "雨飴/uame",
@@ -8,13 +8,24 @@ export const players = [
     "カラス",
     "楽園",
     "マサミ",
-    "飛",
+    "飛/とび",
     "ルルカ",
     "かずみん",
     "れいぼん",
     "はかせ",
-    "ゆすら",
+    "揺すら",
     "ちょむみん",
     "カレラ",
     "ともろ",
+    "Luruca",
+]
+
+export const players = [
+    "Ryuk",
+    "ヘーチョ",
+    "たうたう",
+    "Loa",
+    "けんぐー",
+    "Moby*",
+    "穴 ルッチ",
 ]
