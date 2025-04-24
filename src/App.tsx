@@ -5,7 +5,7 @@ const App = () => {
   const navigate = useNavigate();
   return (
     <Grid container alignItems="center" justifyContent="center" height="100vh">
-      <Button
+      {/* <Button
         variant="contained"
         onClick={() => navigate("/playerPools?group=wasesuma")}
       >
@@ -16,7 +16,7 @@ const App = () => {
         onClick={() => navigate("/playerPools?group=roesuma")}
       >
         ろえスマ
-      </Button>
+      </Button> */}
       <Button
         variant="contained"
         onClick={() => navigate("/playerPools?group=wasesumaBeeSmashBig5")}
