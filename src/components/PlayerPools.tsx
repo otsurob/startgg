@@ -17,7 +17,7 @@ type Props = {
   width?: number | string; // オプション: カード幅
 };
 
-const PlyaerPools = ({ pools, width = 480 }: Props) => {
+const PlayerPools = ({ pools, width = 480 }: Props) => {
   // 並び順が保証されている前提。必要なら .sort() を追加
   const [index, setIndex] = useState(0);
   const max = pools.length - 1;
@@ -45,7 +45,7 @@ const PlyaerPools = ({ pools, width = 480 }: Props) => {
         </IconButton>
 
         <Typography variant="h6" component="span">
-          Wave&nbsp;{current.letter}&nbsp;Group
+          {current.letter === "Z" ? "不参加" : `Wave ${current.letter} Group`}
         </Typography>
 
         <IconButton onClick={goNext} disabled={index === max}>
@@ -73,4 +73,4 @@ const PlyaerPools = ({ pools, width = 480 }: Props) => {
   );
 };
 
-export default PlyaerPools;
+export default PlayerPools;

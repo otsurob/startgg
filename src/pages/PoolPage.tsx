@@ -4,7 +4,11 @@
 // import { Loading } from "../components/Loading";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import PlyaerPools from "../components/PlayerPools";
-import { roesumaPools, wasesumaPools } from "../constants/poolData";
+import {
+  roesumaPools,
+  wasesumaBeeSmashBig5,
+  wasesumaPools,
+} from "../constants/poolData";
 import { Pools } from "../types/types";
 
 const PoolPage = () => {
@@ -14,6 +18,7 @@ const PoolPage = () => {
   const groupMap = new Map<string, Pools[]>([
     ["wasesuma", wasesumaPools],
     ["roesuma", roesumaPools],
+    ["wasesumaBeeSmashBig5", wasesumaBeeSmashBig5],
   ]);
   if (!group) {
     navigate("/");

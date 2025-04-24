@@ -26,7 +26,7 @@ export async function queryGQL(userSlug: string) {
   `;
 
   const response = await fetch(ENDPOINT_URL, {
-    method: "POST", // ここが重要
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${ID_TOKEN}`, // ID_TOKENをここで使う
@@ -88,7 +88,7 @@ export async function queryGQL2() {
     return data;
   }
 
-  export async function queryGQL3(gamerTags: string[]) {
+  export async function queryGQL3(gamerTags: string[], tournamentSlug: string, eventSlug: string) {
     let query = `
         query GetEventId($tSlug:String!, $eSlug:String!){
             tournament(slug:$tSlug){ events( filter: {slug:$eSlug} ){ id } }
@@ -103,7 +103,7 @@ export async function queryGQL2() {
         },
         body: JSON.stringify({
           query,
-          variables: { tSlug: "12-kagaribi-12", eSlug: "singles" }
+          variables: { tSlug: tournamentSlug, eSlug: eventSlug }
         })
       });
     const subData = await subResponse.json();
@@ -137,7 +137,7 @@ export async function queryGQL2() {
     `;
     const res:poolResponses = [];
 
-    console.log(subData["data"]["tournament"]["events"][0]["id"]);
+    // console.log(subData["data"]["tournament"]["events"][0]["id"]);
     const eventId = subData["data"]["tournament"]["events"][0]["id"];
     console.log(eventId);
   
@@ -151,7 +151,7 @@ export async function queryGQL2() {
         },
         body: JSON.stringify({
             query,
-            variables: { tournamentSlug: "12-kagaribi-12", eventId: eventId, gamerTag: gamerTag }
+            variables: { tournamentSlug: tournamentSlug, eventId: eventId, gamerTag: gamerTag }
         })
         });
     
@@ -161,12 +161,15 @@ export async function queryGQL2() {
             res.push({pool: "Z000", gamerTag: gamerTag, });
             continue;
         }
-        const seeds = data["data"]["tournament"]["participants"]["nodes"][0]["entrants"][0]["seeds"];
-        res.push({pool: seeds[seeds.length-1]["phaseGroup"]["displayIdentifier"], gamerTag: data["data"]["tournament"]["participants"]["nodes"][0]["gamerTag"], });
+        const seedsFromApi = data["data"]["tournament"]["participants"]["nodes"][0]["entrants"][0]["seeds"];
+        const gamerTagFromApi = data["data"]["tournament"]["participants"]["nodes"][0]["gamerTag"];
+        let poolFromApi = seedsFromApi[seedsFromApi.length-1]["phaseGroup"]["displayIdentifier"];
+        if(/^[a-z0-9]/.test(poolFromApi))poolFromApi = "P"+poolFromApi; //先頭が数字（篝火形式じゃない）なら"P"をつける
+        res.push({pool: poolFromApi, gamerTag: gamerTagFromApi, });
     }
 
     const logicRes = setPools(res);
-    console.log(logicRes);
+    // console.log(logicRes);
   
     return logicRes;
   }

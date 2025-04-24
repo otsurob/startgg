@@ -17,6 +17,12 @@ const App = () => {
       >
         ろえスマ
       </Button>
+      <Button
+        variant="contained"
+        onClick={() => navigate("/playerPools?group=wasesumaBeeSmashBig5")}
+      >
+        わせスマBeeSmashBig5
+      </Button>
     </Grid>
   );
 };

@@ -18,9 +18,12 @@ export const wasesuma = [
     "カレラ",
     "ともろ",
     "Luruca",
+    "サイトウ",
+    "うっしー",
+    "にこはち",
 ]
 
-export const players = [
+export const roesuma = [
     "Ryuk",
     "ヘーチョ",
     "たうたう",

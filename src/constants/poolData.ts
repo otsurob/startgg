@@ -1,5 +1,6 @@
 import { Pools } from "../types/types"
 
+// 篝火12
 export const wasesumaPools:Pools[] = [
     {
         "letter": "A",
@@ -155,6 +156,81 @@ export const roesumaPools:Pools[] = [
                 "poolNum": "B2800",
                 "players": [
                     "たうたう"
+                ]
+            }
+        ]
+    }
+]
+
+// BeeスマBIG 5
+export const wasesumaBeeSmashBig5:Pools[] = [
+    {
+        "letter": "P",
+        "poolNums": [
+            {
+                "poolNum": "P6",
+                "players": [
+                    "れいぼん"
+                ]
+            },
+            {
+                "poolNum": "P7",
+                "players": [
+                    "こげたごはん",
+                    "うっしー"
+                ]
+            },
+            {
+                "poolNum": "P9",
+                "players": [
+                    "楽園"
+                ]
+            },
+            {
+                "poolNum": "P10",
+                "players": [
+                    "リム",
+                    "しゅぞ"
+                ]
+            },
+            {
+                "poolNum": "P12",
+                "players": [
+                    "マサミ"
+                ]
+            },
+            {
+                "poolNum": "P13",
+                "players": [
+                    "おつ"
+                ]
+            },
+            {
+                "poolNum": "P16",
+                "players": [
+                    "飛/とび"
+                ]
+            }
+        ]
+    },
+    {
+        "letter": "Z",
+        "poolNums": [
+            {
+                "poolNum": "Z000",
+                "players": [
+                    "雨飴/uame",
+                    "てんてん",
+                    "カラス",
+                    "ルルカ",
+                    "かずみん",
+                    "はかせ",
+                    "揺すら",
+                    "ちょむみん",
+                    "カレラ",
+                    "ともろ",
+                    "Luruca",
+                    "サイトウ"
                 ]
             }
         ]
