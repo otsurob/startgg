@@ -7,7 +7,7 @@ import PoolPage from "./pages/PoolPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
+    <BrowserRouter basename={import.meta.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/playerPools" element={<PoolPage />} />
