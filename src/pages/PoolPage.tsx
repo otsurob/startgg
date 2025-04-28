@@ -15,6 +15,8 @@ const PoolPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const group = searchParams.get("group");
+  // ここに追加
+  // クエリパラメータの値をキーとして、poolDataの値と紐づける
   const groupMap = new Map<string, Pools[]>([
     ["wasesuma", wasesumaPools],
     ["roesuma", roesumaPools],

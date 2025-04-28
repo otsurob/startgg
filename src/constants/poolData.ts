@@ -1,4 +1,5 @@
 import { Pools } from "../types/types"
+// オブジェクトで1つにまとめたくね？
 
 // 篝火12
 export const wasesumaPools:Pools[] = [
@@ -236,3 +237,7 @@ export const wasesumaBeeSmashBig5:Pools[] = [
         ]
     }
 ]
+
+//篝火13
+export const wasesumaKagaribi13:Pools[] = []
+export const otsuKagaribi13:Pools[] = []

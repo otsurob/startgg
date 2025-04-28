@@ -1,12 +1,13 @@
 import { Button, Grid } from "@mui/material";
-import { wasesuma } from "../constants/playerList";
+import { playerNames } from "../constants/playerList";
 import { queryGQL3 } from "../api/startggApi";
 import { useState } from "react";
 import { Loading } from "../components/Loading";
 
 const Dev = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const apiPlayers = wasesuma;
+  // ここを変更
+  const apiPlayers = playerNames.wasesuma;
   const hitApi = async () => {
     setIsLoading(true);
     const response = await queryGQL3(apiPlayers, "12-kagaribi-12", "singles");
