@@ -20,6 +20,12 @@ const Dev = () => {
     console.log(response);
     setIsLoading(false);
   };
+  const Kagaribi13Api = async () => {
+    setIsLoading(true);
+    const response = await queryGQL3(apiPlayers, "13-kagaribi-13", "singles");
+    console.log(response);
+    setIsLoading(false);
+  };
   return (
     <Grid container alignItems="center" justifyContent="center" height="100vh">
       <Button variant="contained" onClick={hitApi}>
@@ -27,6 +33,9 @@ const Dev = () => {
       </Button>
       <Button variant="contained" onClick={BeeSmashBig5Api}>
         Beeスマ BIG 5
+      </Button>
+      <Button variant="contained" onClick={Kagaribi13Api}>
+        篝火13
       </Button>
       {isLoading && <Loading />}
     </Grid>

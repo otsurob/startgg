@@ -4,12 +4,9 @@
 // import { Loading } from "../components/Loading";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import PlyaerPools from "../components/PlayerPools";
-import {
-  roesumaPools,
-  wasesumaBeeSmashBig5,
-  wasesumaPools,
-} from "../constants/poolData";
+
 import { Pools } from "../types/types";
+import { poolData } from "../constants/poolData";
 
 const PoolPage = () => {
   const [searchParams] = useSearchParams();
@@ -18,9 +15,11 @@ const PoolPage = () => {
   // ここに追加
   // クエリパラメータの値をキーとして、poolDataの値と紐づける
   const groupMap = new Map<string, Pools[]>([
-    ["wasesuma", wasesumaPools],
-    ["roesuma", roesumaPools],
-    ["wasesumaBeeSmashBig5", wasesumaBeeSmashBig5],
+    ["wasesuma", poolData.wasesumaPools],
+    ["roesuma", poolData.roesumaPools],
+    ["wasesumaBeeSmashBig5", poolData.wasesumaBeeSmashBig5],
+    ["wasesumaKagaribi13", poolData.wasesumaKagaribi13],
+    ["otsuKagaribi13", poolData.otsuKagaribi13],
   ]);
   if (!group) {
     navigate("/");

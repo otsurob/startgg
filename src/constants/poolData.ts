@@ -2,7 +2,7 @@ import { Pools } from "../types/types"
 // オブジェクトで1つにまとめたくね？
 
 // 篝火12
-export const wasesumaPools:Pools[] = [
+const wasesumaPools:Pools[] = [
     {
         "letter": "A",
         "poolNums": [
@@ -113,7 +113,7 @@ export const wasesumaPools:Pools[] = [
     }
 ]
 
-export const roesumaPools:Pools[] = [
+const roesumaPools:Pools[] = [
     {
         "letter": "A",
         "poolNums": [
@@ -164,7 +164,7 @@ export const roesumaPools:Pools[] = [
 ]
 
 // BeeスマBIG 5
-export const wasesumaBeeSmashBig5:Pools[] = [
+const wasesumaBeeSmashBig5:Pools[] = [
     {
         "letter": "P",
         "poolNums": [
@@ -239,5 +239,14 @@ export const wasesumaBeeSmashBig5:Pools[] = [
 ]
 
 //篝火13
-export const wasesumaKagaribi13:Pools[] = []
-export const otsuKagaribi13:Pools[] = []
+const wasesumaKagaribi13:Pools[] = []
+const otsuKagaribi13:Pools[] = []
+
+// export用
+export const poolData = {
+    wasesumaPools : wasesumaPools,
+    roesumaPools : roesumaPools,
+    wasesumaBeeSmashBig5 : wasesumaBeeSmashBig5,
+    wasesumaKagaribi13 : wasesumaKagaribi13,
+    otsuKagaribi13 : otsuKagaribi13,
+}
