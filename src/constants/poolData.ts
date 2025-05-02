@@ -449,6 +449,12 @@ const otsuKagaribi13:Pools[] = [
                 ]
             },
             {
+                "poolNum": "B2400",
+                "players": [
+                    "ろえ"
+                ]
+            },
+            {
                 "poolNum": "B3200",
                 "players": [
                     "fallan"

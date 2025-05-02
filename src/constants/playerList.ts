@@ -37,6 +37,7 @@ const roesuma = [
     "けんぐー",
     "Moby*",
     "ルッチ",
+    "ろえ",
 ]
 
 export const playerNames = {
