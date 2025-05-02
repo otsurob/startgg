@@ -17,11 +17,17 @@ const App = () => {
       >
         ろえスマ
       </Button> */}
-      <Button
+      {/* <Button
         variant="contained"
         onClick={() => navigate("/playerPools?group=wasesumaBeeSmashBig5")}
       >
         わせスマBeeSmashBig5
+      </Button> */}
+      <Button
+        variant="contained"
+        onClick={() => navigate("/playerPools?group=wasesumaKagaribi13")}
+      >
+        わせスマ篝火13
       </Button>
     </Grid>
   );

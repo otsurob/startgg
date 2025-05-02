@@ -11,7 +11,6 @@ const wasesuma = [
     "楽園",
     "マサミ",
     "飛/とび",
-    "ルルカ",
     "かずみん",
     "れいぼん",
     "はかせ",
@@ -22,7 +21,7 @@ const wasesuma = [
     "Luruca",
     "サイトウ",
     "うっしー",
-    "にこはち",
+    "Nicohachi/にこはち",
     "こいたく",
     "fallan",
     "カイニキー",
@@ -37,7 +36,7 @@ const roesuma = [
     "Loa",
     "けんぐー",
     "Moby*",
-    "穴 ルッチ",
+    "ルッチ",
 ]
 
 export const playerNames = {

@@ -7,7 +7,7 @@ import { Loading } from "../components/Loading";
 const Dev = () => {
   const [isLoading, setIsLoading] = useState(false);
   // ここを変更
-  const apiPlayers = playerNames.wasesuma;
+  const apiPlayers = playerNames.otsu;
   const hitApi = async () => {
     setIsLoading(true);
     const response = await queryGQL3(apiPlayers, "12-kagaribi-12", "singles");
