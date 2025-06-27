@@ -27,6 +27,7 @@ const wasesuma = [
     "カイニキー",
     "のしで",
     "Zone",
+    "揚げ",
 ]
 
 const roesuma = [
