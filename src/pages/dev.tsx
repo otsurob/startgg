@@ -26,6 +26,12 @@ const Dev = () => {
     console.log(response);
     setIsLoading(false);
   };
+  const Delta11Api = async () => {
+    setIsLoading(true);
+    const response = await queryGQL3(apiPlayers, "delta-11-1", "singles");
+    console.log(response);
+    setIsLoading(false);
+  };
   return (
     <Grid container alignItems="center" justifyContent="center" height="100vh">
       <Button variant="contained" onClick={hitApi}>
@@ -36,6 +42,9 @@ const Dev = () => {
       </Button>
       <Button variant="contained" onClick={Kagaribi13Api}>
         篝火13
+      </Button>
+      <Button variant="contained" onClick={Delta11Api}>
+        delta11
       </Button>
       {isLoading && <Loading />}
     </Grid>

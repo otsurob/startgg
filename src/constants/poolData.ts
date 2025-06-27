@@ -589,6 +589,184 @@ const otsuKagaribi13:Pools[] = [
     }
 ]
 
+//delta11
+const wasesumaDelta11:Pools[] = [
+    {
+        "letter": "P",
+        "poolNums": [
+            {
+                "poolNum": "P1",
+                "players": [
+                    "飛/とび",
+                    "fallan"
+                ]
+            },
+            {
+                "poolNum": "P5",
+                "players": [
+                    "揚げ"
+                ]
+            },
+            {
+                "poolNum": "P6",
+                "players": [
+                    "楽園"
+                ]
+            },
+            {
+                "poolNum": "P7",
+                "players": [
+                    "おつ",
+                    "こげたごはん",
+                    "マサミ"
+                ]
+            },
+            {
+                "poolNum": "P11",
+                "players": [
+                    "カラス"
+                ]
+            },
+            {
+                "poolNum": "P13",
+                "players": [
+                    "ともろ",
+                    "うっしー"
+                ]
+            },
+            {
+                "poolNum": "P16",
+                "players": [
+                    "雨飴/uame"
+                ]
+            }
+        ]
+    },
+    {
+        "letter": "Z",
+        "poolNums": [
+            {
+                "poolNum": "Z000",
+                "players": [
+                    "リム",
+                    "しゅぞ",
+                    "てんてん",
+                    "かずみん",
+                    "れいぼん",
+                    "はかせ",
+                    "揺すら",
+                    "ちょむみん",
+                    "カレラ",
+                    "Luruca",
+                    "サイトウ",
+                    "Nicohachi/にこはち",
+                    "こいたく",
+                    "カイニキー",
+                    "のしで",
+                    "Zone"
+                ]
+            }
+        ]
+    }
+]
+const otsuDelta11:Pools[] = [
+    {
+        "letter": "P",
+        "poolNums": [
+            {
+                "poolNum": "P1",
+                "players": [
+                    "飛/とび",
+                    "fallan"
+                ]
+            },
+            {
+                "poolNum": "P2",
+                "players": [
+                    "Ryuk"
+                ]
+            },
+            {
+                "poolNum": "P5",
+                "players": [
+                    "揚げ"
+                ]
+            },
+            {
+                "poolNum": "P6",
+                "players": [
+                    "楽園"
+                ]
+            },
+            {
+                "poolNum": "P7",
+                "players": [
+                    "おつ",
+                    "こげたごはん",
+                    "マサミ"
+                ]
+            },
+            {
+                "poolNum": "P11",
+                "players": [
+                    "カラス"
+                ]
+            },
+            {
+                "poolNum": "P13",
+                "players": [
+                    "ともろ",
+                    "うっしー"
+                ]
+            },
+            {
+                "poolNum": "P14",
+                "players": [
+                    "Loa"
+                ]
+            },
+            {
+                "poolNum": "P16",
+                "players": [
+                    "雨飴/uame"
+                ]
+            }
+        ]
+    },
+    {
+        "letter": "Z",
+        "poolNums": [
+            {
+                "poolNum": "Z000",
+                "players": [
+                    "リム",
+                    "しゅぞ",
+                    "てんてん",
+                    "かずみん",
+                    "れいぼん",
+                    "はかせ",
+                    "揺すら",
+                    "ちょむみん",
+                    "カレラ",
+                    "Luruca",
+                    "サイトウ",
+                    "Nicohachi/にこはち",
+                    "こいたく",
+                    "カイニキー",
+                    "のしで",
+                    "Zone",
+                    "ヘーチョ",
+                    "たうたう",
+                    "けんぐー",
+                    "Moby*",
+                    "ルッチ",
+                    "ろえ"
+                ]
+            }
+        ]
+    }
+]
+
 // export用
 export const poolData = {
     wasesumaPools : wasesumaPools,
@@ -596,4 +774,6 @@ export const poolData = {
     wasesumaBeeSmashBig5 : wasesumaBeeSmashBig5,
     wasesumaKagaribi13 : wasesumaKagaribi13,
     otsuKagaribi13 : otsuKagaribi13,
+    wasesumaDelta11 : wasesumaDelta11,
+    otsuDelta11 : otsuDelta11
 }
