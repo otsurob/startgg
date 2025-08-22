@@ -767,6 +767,136 @@ const otsuDelta11:Pools[] = [
     }
 ]
 
+const wasesumaUmabura12:Pools[] = [
+    {
+        "letter": "A",
+        "poolNums": [
+            {
+                "poolNum": "A4",
+                "players": [
+                    "fallan"
+                ]
+            },
+            {
+                "poolNum": "A6",
+                "players": [
+                    "揺すら"
+                ]
+            },
+            {
+                "poolNum": "A19",
+                "players": [
+                    "Luruca"
+                ]
+            },
+            {
+                "poolNum": "A32",
+                "players": [
+                    "楽園"
+                ]
+            }
+        ]
+    },
+    {
+        "letter": "B",
+        "poolNums": [
+            {
+                "poolNum": "B2",
+                "players": [
+                    "しゅぞ"
+                ]
+            },
+            {
+                "poolNum": "B4",
+                "players": [
+                    "カラス"
+                ]
+            },
+            {
+                "poolNum": "B6",
+                "players": [
+                    "マサミ"
+                ]
+            },
+            {
+                "poolNum": "B9",
+                "players": [
+                    "こげたごはん"
+                ]
+            },
+            {
+                "poolNum": "B13",
+                "players": [
+                    "ともろ"
+                ]
+            },
+            {
+                "poolNum": "B21",
+                "players": [
+                    "揚げ"
+                ]
+            },
+            {
+                "poolNum": "B22",
+                "players": [
+                    "雨飴/uame"
+                ]
+            },
+            {
+                "poolNum": "B23",
+                "players": [
+                    "れいぼん"
+                ]
+            },
+            {
+                "poolNum": "B24",
+                "players": [
+                    "Nicohachi/にこはち"
+                ]
+            },
+            {
+                "poolNum": "B26",
+                "players": [
+                    "リム"
+                ]
+            },
+            {
+                "poolNum": "B28",
+                "players": [
+                    "うっしー"
+                ]
+            },
+            {
+                "poolNum": "B29",
+                "players": [
+                    "飛/とび"
+                ]
+            }
+        ]
+    },
+    {
+        "letter": "Z",
+        "poolNums": [
+            {
+                "poolNum": "Z000",
+                "players": [
+                    "おつ",
+                    "てんてん",
+                    "かずみん",
+                    "はかせ",
+                    "ちょむみん",
+                    "カレラ",
+                    "サイトウ",
+                    "こいたく",
+                    "カイニキー",
+                    "のしで",
+                    "Zone"
+                ]
+            }
+        ]
+    }
+]
+
 // export用
 export const poolData = {
     wasesumaPools : wasesumaPools,
@@ -775,5 +905,6 @@ export const poolData = {
     wasesumaKagaribi13 : wasesumaKagaribi13,
     otsuKagaribi13 : otsuKagaribi13,
     wasesumaDelta11 : wasesumaDelta11,
-    otsuDelta11 : otsuDelta11
+    otsuDelta11 : otsuDelta11,
+    wasesumaUmabura12: wasesumaUmabura12
 }

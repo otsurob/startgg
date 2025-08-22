@@ -22,6 +22,7 @@ const PoolPage = () => {
     ["otsuKagaribi13", poolData.otsuKagaribi13],
     ["wasesumaDelta11", poolData.wasesumaDelta11],
     ["otsuDelta11", poolData.otsuDelta11],
+    ["wasesumaUmebura12", poolData.wasesumaUmabura12],
   ]);
   if (!group) {
     navigate("/");

@@ -7,7 +7,7 @@ import { Loading } from "../components/Loading";
 const Dev = () => {
   const [isLoading, setIsLoading] = useState(false);
   // ここを変更
-  const apiPlayers = playerNames.otsu;
+  const apiPlayers = playerNames.wasesuma;
   const hitApi = async () => {
     setIsLoading(true);
     const response = await queryGQL3(apiPlayers, "12-kagaribi-12", "singles");
@@ -32,6 +32,12 @@ const Dev = () => {
     console.log(response);
     setIsLoading(false);
   };
+  const Umebura12Api = async () => {
+    setIsLoading(true);
+    const response = await queryGQL3(apiPlayers, "sp12-umeburasp12", "singles");
+    console.log(response);
+    setIsLoading(false);
+  };
   return (
     <Grid container alignItems="center" justifyContent="center" height="100vh">
       <Button variant="contained" onClick={hitApi}>
@@ -45,6 +51,9 @@ const Dev = () => {
       </Button>
       <Button variant="contained" onClick={Delta11Api}>
         delta11
+      </Button>
+      <Button variant="contained" onClick={Umebura12Api}>
+        Umebura12
       </Button>
       {isLoading && <Loading />}
     </Grid>

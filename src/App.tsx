@@ -29,11 +29,17 @@ const App = () => {
       >
         わせスマ篝火13
       </Button> */}
-      <Button
+      {/* <Button
         variant="contained"
         onClick={() => navigate("/playerPools?group=wasesumaDelta11")}
       >
         わせスマdelta11
+      </Button> */}
+      <Button
+        variant="contained"
+        onClick={() => navigate("/playerPools?group=wasesumaUmebura12")}
+      >
+        わせスマUmebura12
       </Button>
     </Grid>
   );
