@@ -1,0 +1,334 @@
+{
+  "tournament": "篝火#13/KAGARIBI#13",
+  "otsu": [
+    {
+      "letter": "A",
+      "poolNums": [
+        {
+          "poolNum": "A1000",
+          "players": [
+            "サイトウ"
+          ]
+        },
+        {
+          "poolNum": "A2000",
+          "players": [
+            "ちょむみん"
+          ]
+        },
+        {
+          "poolNum": "A2100",
+          "players": [
+            "れいぼん"
+          ]
+        },
+        {
+          "poolNum": "A3600",
+          "players": [
+            "楽園"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "B",
+      "poolNums": [
+        {
+          "poolNum": "B1000",
+          "players": [
+            "Luruca"
+          ]
+        },
+        {
+          "poolNum": "B2200",
+          "players": [
+            "Moby*"
+          ]
+        },
+        {
+          "poolNum": "B2400",
+          "players": [
+            "ろえ"
+          ]
+        },
+        {
+          "poolNum": "B3200",
+          "players": [
+            "fallan"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "C",
+      "poolNums": [
+        {
+          "poolNum": "C1300",
+          "players": [
+            "飛/とび"
+          ]
+        },
+        {
+          "poolNum": "C2700",
+          "players": [
+            "揺すら"
+          ]
+        },
+        {
+          "poolNum": "C3300",
+          "players": [
+            "ヘーチョ",
+            "うっしー"
+          ]
+        },
+        {
+          "poolNum": "C3400",
+          "players": [
+            "こげたごはん"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "D",
+      "poolNums": [
+        {
+          "poolNum": "D600",
+          "players": [
+            "カラス"
+          ]
+        },
+        {
+          "poolNum": "D1100",
+          "players": [
+            "こいたく"
+          ]
+        },
+        {
+          "poolNum": "D1200",
+          "players": [
+            "カレラ"
+          ]
+        },
+        {
+          "poolNum": "D1700",
+          "players": [
+            "はかせ"
+          ]
+        },
+        {
+          "poolNum": "D2000",
+          "players": [
+            "Nicohachi/にこはち"
+          ]
+        },
+        {
+          "poolNum": "D2700",
+          "players": [
+            "ルッチ"
+          ]
+        },
+        {
+          "poolNum": "D3400",
+          "players": [
+            "おつ",
+            "てんてん"
+          ]
+        },
+        {
+          "poolNum": "D3600",
+          "players": [
+            "しゅぞ",
+            "マサミ"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "P",
+      "poolNums": [
+        {
+          "poolNum": "P1",
+          "players": [
+            "リム",
+            "雨飴/uame"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "Z",
+      "poolNums": [
+        {
+          "poolNum": "Z000",
+          "players": [
+            "Ryuk",
+            "たうたう",
+            "Loa",
+            "けんぐー",
+            "かずみん",
+            "ともろ",
+            "カイニキー",
+            "のしで",
+            "Zone",
+            "揚げ"
+          ]
+        }
+      ]
+    }
+  ],
+  "wasesuma": [
+    {
+      "letter": "A",
+      "poolNums": [
+        {
+          "poolNum": "A1000",
+          "players": [
+            "サイトウ"
+          ]
+        },
+        {
+          "poolNum": "A2000",
+          "players": [
+            "ちょむみん"
+          ]
+        },
+        {
+          "poolNum": "A2100",
+          "players": [
+            "れいぼん"
+          ]
+        },
+        {
+          "poolNum": "A3600",
+          "players": [
+            "楽園"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "B",
+      "poolNums": [
+        {
+          "poolNum": "B1000",
+          "players": [
+            "Luruca"
+          ]
+        },
+        {
+          "poolNum": "B3200",
+          "players": [
+            "fallan"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "C",
+      "poolNums": [
+        {
+          "poolNum": "C1300",
+          "players": [
+            "飛/とび"
+          ]
+        },
+        {
+          "poolNum": "C2700",
+          "players": [
+            "揺すら"
+          ]
+        },
+        {
+          "poolNum": "C3300",
+          "players": [
+            "うっしー"
+          ]
+        },
+        {
+          "poolNum": "C3400",
+          "players": [
+            "こげたごはん"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "D",
+      "poolNums": [
+        {
+          "poolNum": "D600",
+          "players": [
+            "カラス"
+          ]
+        },
+        {
+          "poolNum": "D1100",
+          "players": [
+            "こいたく"
+          ]
+        },
+        {
+          "poolNum": "D1200",
+          "players": [
+            "カレラ"
+          ]
+        },
+        {
+          "poolNum": "D1700",
+          "players": [
+            "はかせ"
+          ]
+        },
+        {
+          "poolNum": "D2000",
+          "players": [
+            "Nicohachi/にこはち"
+          ]
+        },
+        {
+          "poolNum": "D3400",
+          "players": [
+            "おつ",
+            "てんてん"
+          ]
+        },
+        {
+          "poolNum": "D3600",
+          "players": [
+            "しゅぞ",
+            "マサミ"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "P",
+      "poolNums": [
+        {
+          "poolNum": "P1",
+          "players": [
+            "リム",
+            "雨飴/uame"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "Z",
+      "poolNums": [
+        {
+          "poolNum": "Z000",
+          "players": [
+            "かずみん",
+            "ともろ",
+            "カイニキー",
+            "のしで",
+            "Zone",
+            "揚げ"
+          ]
+        }
+      ]
+    }
+  ]
+}
