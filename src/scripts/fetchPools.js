@@ -95,10 +95,13 @@ function setPools(poolResponses) {
 }
 
 async function queryGQL3Like(gamerTags, tournamentSlug, eventSlug, token) {
-  // 1) get event id
+  // 1) get event id and tournament name
   let query = `
     query GetEventId($tSlug:String!, $eSlug:String!){
-      tournament(slug:$tSlug){ events( filter: {slug:$eSlug} ){ id } }
+      tournament(slug:$tSlug){ 
+        name
+        events( filter: {slug:$eSlug} ){ id } 
+      }
     }
   `;
   const subResponse = await fetch(ENDPOINT_URL, {
@@ -111,7 +114,9 @@ async function queryGQL3Like(gamerTags, tournamentSlug, eventSlug, token) {
     body: JSON.stringify({ query, variables: { tSlug: tournamentSlug, eSlug: eventSlug } }),
   });
   const subData = await subResponse.json();
+  // console.log(subData)
   const eventId = subData?.data?.tournament?.events?.[0]?.id;
+  const tournamentName = subData?.data?.tournament?.name;
   if (!eventId) throw new Error('Event ID not found. Check tournament slug and event slug.');
 
   // 2) per-player pools
@@ -166,7 +171,7 @@ async function queryGQL3Like(gamerTags, tournamentSlug, eventSlug, token) {
     res.push({ pool: poolFromApi, gamerTag: gamerTagFromApi });
   }
 
-  return setPools(res);
+  return { pools: setPools(res), tournamentName };
 }
 
 async function main() {
@@ -196,16 +201,20 @@ async function main() {
   }
   console.log(`Fetching pools for ${tournamentSlug} (${eventSlug}) for groups: ${groupKeys.join(', ')}`);
   const resultByGroup = {};
+  let tournamentName;
   for (const key of groupKeys) {
     const names = groups[key];
     console.log(`- Group ${key}: ${names.length} players`);
-    resultByGroup[key] = await queryGQL3Like(names, tournamentSlug, eventSlug, token);
+    const { pools, tournamentName: tn } = await queryGQL3Like(names, tournamentSlug, eventSlug, token);
+    if (!tournamentName) tournamentName = tn;
+    resultByGroup[key] = pools;
   }
 
   const outDir = path.resolve(__dirname, '..', 'poolDatas');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, `${tournamentSlug}.json`);
-  fs.writeFileSync(outPath, JSON.stringify(resultByGroup, null, 2), 'utf8');
+  const outJson = { tournament: tournamentName ?? tournamentSlug, ...resultByGroup };
+  fs.writeFileSync(outPath, JSON.stringify(outJson, null, 2), 'utf8');
   console.log(`Wrote: ${path.relative(path.resolve(__dirname, '..', '..'), outPath)}`);
 }
 
