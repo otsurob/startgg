@@ -1,0 +1,211 @@
+{
+  "tournament": "DELTA×西武撃 Rising",
+  "otsu": [
+    {
+      "letter": "P",
+      "poolNums": [
+        {
+          "poolNum": "P1",
+          "players": [
+            "れいぼん",
+            "カイニキー"
+          ]
+        },
+        {
+          "poolNum": "P2",
+          "players": [
+            "サイトウ"
+          ]
+        },
+        {
+          "poolNum": "P3",
+          "players": [
+            "kengo/けんご",
+            "ともろ"
+          ]
+        },
+        {
+          "poolNum": "P4",
+          "players": [
+            "fallan"
+          ]
+        },
+        {
+          "poolNum": "P6",
+          "players": [
+            "Luruca"
+          ]
+        },
+        {
+          "poolNum": "P7",
+          "players": [
+            "Moby*"
+          ]
+        },
+        {
+          "poolNum": "P8",
+          "players": [
+            "揚げ"
+          ]
+        },
+        {
+          "poolNum": "P9",
+          "players": [
+            "こいたく",
+            "Uraki"
+          ]
+        },
+        {
+          "poolNum": "P10",
+          "players": [
+            "カラス",
+            "のべ"
+          ]
+        },
+        {
+          "poolNum": "P13",
+          "players": [
+            "はかせ",
+            "Nicohachi/にこはち"
+          ]
+        },
+        {
+          "poolNum": "P14",
+          "players": [
+            "いと"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "Z",
+      "poolNums": [
+        {
+          "poolNum": "Z000",
+          "players": [
+            "Ryuk",
+            "ヘーチョ",
+            "たうたう",
+            "Loa",
+            "ルッチ",
+            "ろえ",
+            "おつ",
+            "リム",
+            "雨飴/uame",
+            "こげたごはん",
+            "しゅぞ",
+            "てんてん",
+            "楽園",
+            "マサミ",
+            "飛/とび",
+            "かずみん",
+            "揺すら",
+            "ちょむみん",
+            "カレラ",
+            "うっしー",
+            "のしで",
+            "Zone"
+          ]
+        }
+      ]
+    }
+  ],
+  "wasesuma": [
+    {
+      "letter": "P",
+      "poolNums": [
+        {
+          "poolNum": "P1",
+          "players": [
+            "れいぼん",
+            "カイニキー"
+          ]
+        },
+        {
+          "poolNum": "P2",
+          "players": [
+            "サイトウ"
+          ]
+        },
+        {
+          "poolNum": "P3",
+          "players": [
+            "kengo/けんご",
+            "ともろ"
+          ]
+        },
+        {
+          "poolNum": "P4",
+          "players": [
+            "fallan"
+          ]
+        },
+        {
+          "poolNum": "P6",
+          "players": [
+            "Luruca"
+          ]
+        },
+        {
+          "poolNum": "P8",
+          "players": [
+            "揚げ"
+          ]
+        },
+        {
+          "poolNum": "P9",
+          "players": [
+            "こいたく",
+            "Uraki"
+          ]
+        },
+        {
+          "poolNum": "P10",
+          "players": [
+            "カラス",
+            "のべ"
+          ]
+        },
+        {
+          "poolNum": "P13",
+          "players": [
+            "はかせ",
+            "Nicohachi/にこはち"
+          ]
+        },
+        {
+          "poolNum": "P14",
+          "players": [
+            "いと"
+          ]
+        }
+      ]
+    },
+    {
+      "letter": "Z",
+      "poolNums": [
+        {
+          "poolNum": "Z000",
+          "players": [
+            "おつ",
+            "リム",
+            "雨飴/uame",
+            "こげたごはん",
+            "しゅぞ",
+            "てんてん",
+            "楽園",
+            "マサミ",
+            "飛/とび",
+            "かずみん",
+            "揺すら",
+            "ちょむみん",
+            "カレラ",
+            "うっしー",
+            "のしで",
+            "Zone"
+          ]
+        }
+      ]
+    }
+  ]
+}
